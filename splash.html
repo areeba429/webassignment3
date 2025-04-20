@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blossom Beauty 🌸</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .fade-in {
+      animation: fadeInUp 1.5s ease-in-out forwards;
+    }
+
+    .typing::after {
+      content: "|";
+      animation: blink 1s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
+</head>
+<body class="bg-pink-100 min-h-screen flex items-center justify-center">
+
+  <!-- Splash Content -->
+  <section class="w-full h-screen bg-cover bg-center flex items-center justify-center relative"
+    style="background-image: url('https://media.istockphoto.com/id/1462029265/photo/pink-rose-flower-bouquet-valentine-concept-3d-rendering.jpg?s=612x612&w=0&k=20&c=Z0MmaHzGdTYMg6ndOsHK3PQ66R1svl3loMAJrI1DIMg=');">
+    
+    <div class="bg-white/90 p-8 md:p-12 rounded-xl shadow-2xl text-center max-w-2xl mx-4 fade-in">
+      <h1 class="text-4xl md:text-5xl font-bold text-pink-700 mb-4 typing" id="mainHeading"></h1>
+      <p class="text-pink-800 text-lg md:text-xl" id="subHeading" style="opacity: 0;"></p>
+    </div>
+  </section>
+
+  <!-- Auto Redirect Script + Typing -->
+  <script>
+    const mainText = "Welcome To Blossom Beauty !";
+    const subText = " Find Fresh, elegant and handpicked flowers just for you...";
+    const mainHeading = document.getElementById("mainHeading");
+    const subHeading = document.getElementById("subHeading");
+    let index = 0;
+
+    function typeMain() {
+      if (index < mainText.length) {
+        mainHeading.innerHTML += mainText.charAt(index);
+        index++;
+        setTimeout(typeMain, 60);
+      } else {
+        subHeading.style.opacity = 1;
+        subHeading.textContent = subText;
+      }
+    }
+
+    window.onload = () => {
+      typeMain();
+      setTimeout(() => {
+        window.location.href = "index.html"; // Redirect after 5 seconds
+      }, 5000);
+    };
+  </script>
+
+</body>
+</html>

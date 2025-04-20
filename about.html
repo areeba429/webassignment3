@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us | Blossom Beauty 🌸</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in-up.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .flip-card {
+      perspective: 1000px;
+    }
+    .flip-card-inner {
+      transition: transform 0.6s;
+      transform-style: preserve-3d;
+    }
+    .flip-card:hover .flip-card-inner {
+      transform: rotateY(180deg);
+    }
+    .flip-card-front,
+    .flip-card-back {
+      backface-visibility: hidden;
+    }
+    .flip-card-back {
+      transform: rotateY(180deg);
+    }
+  </style>
+</head>
+<body class="bg-pink-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-pink-500">Blossom Beauty 🌸</a>
+      <ul class="flex space-x-6 font-medium">
+        <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
+        <li><a href="products.html" class="hover:text-pink-500">Products</a></li>
+        <li><a href="about.html" class="text-pink-500 font-semibold underline">About Us</a></li>
+        <li><a href="contact.html" class="hover:text-pink-500">Contact</a></li>
+        <li><a href="register.html" class="hover:text-pink-500">Register</a></li>
+        <li><a href="login.html" class="hover:text-pink-500">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="text-center py-16 bg-pink-100">
+    <h1 class="text-4xl font-bold text-pink-600 mb-4">About Blossom Beauty 🌸</h1>
+    <p class="text-gray-700 text-lg max-w-3xl mx-auto fade-in-up">At Blossom Beauty, we believe every flower tells a story. Founded with love and passion, we aim to make every occasion bloom with joy. Our floral creations are crafted to brighten lives and bring people closer.</p>
+  </section>
+
+  <!-- Mission & Vision -->
+  <section class="max-w-6xl mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-10">
+    <div class="fade-in-up bg-white p-6 rounded-2xl shadow-md hover:shadow-pink-300 transition">
+      <h2 class="text-2xl font-semibold text-pink-500 mb-2">🌸 Our Mission</h2>
+      <p class="text-gray-600">To spread happiness and emotions through the art of flowers. We are committed to delivering fresh, handcrafted blooms that create unforgettable moments.</p>
+    </div>
+    <div class="fade-in-up bg-white p-6 rounded-2xl shadow-md hover:shadow-pink-300 transition">
+      <h2 class="text-2xl font-semibold text-pink-500 mb-2">🌷 Our Vision</h2>
+      <p class="text-gray-600">To become a leading floral brand known for elegance, creativity, and heartfelt service, making beauty accessible in every bouquet we deliver.</p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section class="px-4 py-12 bg-pink-100">
+    <h2 class="text-center text-3xl font-bold text-pink-600 mb-8">Meet Our Lovely Team 💐</h2>
+    <div class="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div class="flip-card fade-in-up bg-white rounded-2xl shadow-lg p-6">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://img.freepik.com/premium-photo/portrait-confident-muslim-business-woman-hijab-with-modern-office-building-background_801652-926.jpg?ga=GA1.1.666193177.1740218674&semt=ais_hybrid&w=740" class="rounded-full mx-auto w-40 h-40 object-cover" />
+            <h2 class="mt-4 text-xl font-semibold text-center text-pink-500">Sara Akhtar</h2>
+            <p class="text-center text-gray-500">Founder & Florist</p>
+          </div>
+          <div class="flip-card-back absolute top-0 left-0 w-full h-full bg-pink-200 rounded-2xl flex items-center justify-center">
+            <p class="text-center px-4">“Flowers are our love language.”</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-in-up bg-white rounded-2xl shadow-lg p-6">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://img.freepik.com/premium-photo/businesswoman-using-digital-tablet_1048944-30393430.jpg?ga=GA1.1.666193177.1740218674&semt=ais_hybrid&w=740" class="rounded-full mx-auto w-40 h-40 object-cover" />
+            <h2 class="mt-4 text-xl font-semibold text-center text-pink-500">Iqra Danish</h2>
+            <p class="text-center text-gray-500">Creative Director</p>
+          </div>
+          <div class="flip-card-back absolute top-0 left-0 w-full h-full bg-pink-200 rounded-2xl flex items-center justify-center">
+            <p class="text-center px-4">“We turn ideas into petal poetry.”</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card fade-in-up bg-white rounded-2xl shadow-lg p-6">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="https://img.freepik.com/premium-photo/smiling-with-happy-confident-expression-with-hand-chin_1194-404443.jpg?ga=GA1.1.666193177.1740218674&semt=ais_hybrid&w=740" class="rounded-full mx-auto w-40 h-40 object-cover" />
+            <h2 class="mt-4 text-xl font-semibold text-pink-500">Ahad Raza</h2>
+            <p class="text-center text-gray-500">Delivery Expert</p>
+          </div>
+          <div class="flip-card-back absolute top-0 left-0 w-full h-full bg-pink-200 rounded-2xl flex items-center justify-center">
+            <p class="text-center px-4">“Delivering happiness to your doorstep.”</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center py-6 mt-12 shadow-inner">
+    <p class="text-sm text-gray-500">© 2025 Blossom Beauty 🌸. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Scroll Animation
+    const fadeElements = document.querySelectorAll('.fade-in-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    fadeElements.forEach(el => observer.observe(el));
+
+    // Highlight Active Link
+    const currentPage = window.location.pathname.split("/").pop();
+    document.querySelectorAll("nav a").forEach(link => {
+      if (link.getAttribute("href") === currentPage) {
+        link.classList.add("text-pink-500", "font-semibold", "underline");
+      }
+    });
+  </script>
+</body>
+</html>

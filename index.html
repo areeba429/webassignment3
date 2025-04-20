@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blossom Beauty 🌸 | Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeInUp 1s ease forwards;
+    }
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+  </style>
+</head>
+<body class="bg-pink-50 text-pink-900">
+
+<!-- Navbar -->
+<header class="sticky top-0 z-50 bg-pink-400 shadow-md py-4 px-6 flex justify-between items-center">
+  <h1 class="text-2xl font-bold text-pink-700 flex-1 text-center md:text-left">Blossom Beauty 🌸</h1>
+  <div class="flex items-center gap-4 absolute left-0 md:left-auto right-0 md:static">
+    <input type="text" id="searchInput" placeholder="Search flowers..." class="hidden md:block px-3 py-1 rounded-full text-pink-700 placeholder:text-pink-500 text-sm focus:outline-none focus:ring-2 focus:ring-pink-300">
+    <button id="toggleDark" class="text-white text-xl" title="Toggle Dark Mode">🌓</button>
+    <a href="cart.html" class="text-2xl text-pink-700 relative" title="Cart 🛒">🛍️
+      <span id="cart-count" class="absolute -top-2 -right-2 bg-white text-pink-700 text-xs w-5 h-5 rounded-full flex items-center justify-center font-bold shadow-md">0</span>
+    </a>
+  </div>
+  <button id="menu-toggle" class="md:hidden text-white text-3xl focus:outline-none absolute right-0 z-50">☰</button>
+  <nav id="nav-menu" class="hidden md:flex flex-col md:flex-row md:items-center md:space-x-6 font-medium text-white absolute md:static top-full left-0 w-full md:w-auto bg-pink-400 md:bg-transparent p-4 md:p-0 shadow-md md:shadow-none z-40">
+    <a href="index.html" class="hover:text-pink-800 block py-2 md:py-0">Home</a>
+    <a href="products.html" class="hover:text-pink-800 block py-2 md:py-0">Product</a>
+    <a href="register.html" class="hover:text-pink-800 block py-2 md:py-0">Register</a>
+    <a href="login.html" class="hover:text-pink-800 block py-2 md:py-0">Login</a>
+    <a href="about.html" class="hover:text-pink-800 block py-2 md:py-0">About</a>
+    <a href="contact.html" class="hover:text-pink-800 block py-2 md:py-0">Contact</a>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section class="w-full bg-cover bg-center h-[70vh] flex items-center justify-center text-center" style="background-image: url('https://images.unsplash.com/photo-1519741491041-7e3f87f8bc35?auto=format&fit=crop&w=1470&q=80');">
+  <div class="bg-white/80 p-8 md:p-12 rounded-xl shadow-xl max-w-xl mx-4 fade-in">
+    <h2 class="text-4xl md:text-5xl font-bold text-pink-700 mb-4">Brighten Someone's Day with Beautiful Flowers</h2>
+    <p class="text-pink-800 mb-6 text-lg">Fresh, elegant and handpicked just for you..</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="products.html" class="bg-pink-700 text-white px-6 py-3 rounded-full hover:bg-pink-800 transition">Shop Now</a>
+      <a href="about.html" class="bg-white border-2 border-pink-700 text-pink-700 hover:bg-pink-700 hover:text-white px-6 py-3 rounded-full transition">About Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- Products -->
+<section class="py-12 px-4 bg-pink-50">
+  <h2 class="text-3xl font-bold text-center text-pink-700 mb-10">Our Gorgeous Flowers 💐</h2>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+    
+    <div class="product-card bg-white rounded-xl shadow hover:shadow-pink-300 transition overflow-hidden hover:scale-105 duration-300">
+      <img src="https://img.freepik.com/free-photo/red-roses-bouquet-standing-beige-color-chair-with-curtain-detail_114579-2712.jpg" class="w-full h-80 object-cover">
+      <div class="p-2">
+        <h3 class="text-xl font-semibold text-pink-600">Elegant Roses</h3>
+        <div class="mt-4 flex justify-between items-center">
+          <span class="font-bold text-pink-500">PKR 1500</span>
+          <button class="add-to-cart-btn bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-full">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+    <!-- Tulips -->
+<div class="product-card bg-white rounded-xl shadow hover:shadow-pink-300 transition overflow-hidden hover:scale-105 duration-300">
+  <img src="https://img.freepik.com/free-photo/beautiful-bouquet-blue-wooden-surface_23-2147609375.jpg?t=st=1745169699~exp=1745173299~hmac=9e71ef9272fa974362e67f900e85895a9c70fa8fd5becfa964e03528f3095dbb&w=996" class="w-full h-80 object-cover">
+  <div class="p-2">
+    <h3 class="text-xl font-semibold text-pink-600">Tulip Bouquet</h3>
+    <div class="mt-4 flex justify-between items-center">
+      <span class="font-bold text-pink-500">PKR 1800</span>
+      <button class="add-to-cart-btn bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-full">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sunflowers -->
+<div class="product-card bg-white rounded-xl shadow hover:shadow-pink-300 transition overflow-hidden hover:scale-105 duration-300">
+  <img src="https://img.freepik.com/premium-photo/close-up-sunflower_1048944-27418919.jpg?ga=GA1.1.666193177.1740218674&semt=ais_hybrid&w=740" class="w-full h-80 object-cover">
+  <div class="p-2">
+    <h3 class="text-xl font-semibold text-pink-600">Sunflower Bundle</h3>
+    <div class="mt-4 flex justify-between items-center">
+      <span class="font-bold text-pink-500">PKR 1300</span>
+      <button class="add-to-cart-btn bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-full">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- White Roses -->
+<div class="product-card bg-white rounded-xl shadow hover:shadow-pink-300 transition overflow-hidden hover:scale-105 duration-300">
+  <img src="https://img.freepik.com/free-photo/view-delicate-white-roses-bouquet-vase_23-2150539971.jpg?ga=GA1.1.666193177.1740218674&semt=ais_hybrid&w=740" class="w-full h-80 object-cover">
+  <div class="p-2">
+    <h3 class="text-xl font-semibold text-pink-600">White Roses</h3>
+    <div class="mt-4 flex justify-between items-center">
+      <span class="font-bold text-pink-500">PKR 1400</span>
+      <button class="add-to-cart-btn bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-full">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Orchid Bouquet -->
+<div class="product-card bg-white rounded-xl shadow hover:shadow-pink-300 transition overflow-hidden hover:scale-105 duration-300">
+  <img src="https://img.freepik.com/free-photo/bouquet-glass-table_1203-489.jpg?ga=GA1.1.666193177.1740218674&semt=ais_hybrid&w=740" class="w-full h-80 object-cover">
+  <div class="p-2">
+    <h3 class="text-xl font-semibold text-pink-600">Orchid Charm</h3>
+    <div class="mt-4 flex justify-between items-center">
+      <span class="font-bold text-pink-500">PKR 2000</span>
+      <button class="add-to-cart-btn bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-full">Add to Cart</button>
+    </div>
+  </div>
+</div>
+
+<!-- Daisies -->
+<div class="product-card bg-white rounded-xl shadow hover:shadow-pink-300 transition overflow-hidden hover:scale-105 duration-300">
+  <img src="https://img.freepik.com/free-photo/springtime-concept-with-flowers-vase_23-2148442385.jpg?ga=GA1.1.666193177.1740218674&semt=ais_hybrid&w=740" class="w-full h-80 object-cover">
+  <div class="p-2">
+    <h3 class="text-xl font-semibold text-pink-600">Daisy Delight</h3>
+    <div class="mt-4 flex justify-between items-center">
+      <span class="font-bold text-pink-500">PKR 1100</span>
+      <button class="add-to-cart-btn bg-pink-500 hover:bg-pink-600 text-white px-3 py-1 rounded-full">Add to Cart</button>
+    </div>
+  </div>
+</div>
+    
+  </div>
+</section>
+
+<!-- Register -->
+<section class="text-center mt-10">
+  <a href="register.html" class="bg-pink-700 text-white px-6 py-3 rounded-full hover:bg-pink-800 transition text-lg">Register Now</a>
+</section>
+
+<!-- Footer -->
+<footer class="bg-pink text-center text-pink-800 py-4 shadow-inner mt-10">
+  © 2025 Blossom Beauty 🌸 — All rights reserved.
+</footer>
+
+<!-- Toast Notification -->
+<div id="toast" class="fixed bottom-5 right-5 bg-pink-600 text-white py-2 px-4 rounded shadow-lg opacity-0 transition-opacity duration-300 z-50">
+  Product added to cart!
+</div>
+
+<!-- Back to Top Button -->
+<button id="backToTop" title="Back to Top" class="hidden fixed bottom-20 right-5 bg-pink-600 text-white p-3 rounded-full shadow-lg hover:bg-pink-700 transition z-50">
+  ⬆️
+</button>
+
+<!-- JS Scripts -->
+<script>
+  // Toggle mobile nav
+  document.getElementById("menu-toggle").addEventListener("click", () => {
+    document.getElementById("nav-menu").classList.toggle("hidden");
+  });
+
+  // Add to cart
+  document.addEventListener("DOMContentLoaded", () => {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const updateCartCount = () => {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      document.getElementById("cart-count").innerText = totalItems;
+    };
+
+    const showToast = () => {
+      const toast = document.getElementById("toast");
+      toast.classList.remove("opacity-0");
+      toast.classList.add("opacity-100");
+      setTimeout(() => {
+        toast.classList.remove("opacity-100");
+        toast.classList.add("opacity-0");
+      }, 2000);
+    };
+
+    document.querySelectorAll(".add-to-cart-btn").forEach(button => {
+      button.addEventListener("click", function () {
+        const card = this.closest(".product-card");
+        const name = card.querySelector("h3").innerText;
+        const price = parseInt(card.querySelector("span").innerText.replace("PKR", "").trim());
+        const image = card.querySelector("img").src;
+
+        const existing = cart.find(p => p.name === name);
+        if (existing) {
+          existing.quantity += 1;
+        } else {
+          cart.push({ name, price, image, quantity: 1 });
+        }
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+        updateCartCount();
+        showToast();
+      });
+    });
+
+    updateCartCount();
+
+    // Back to top button
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      backToTopBtn.classList.toggle("hidden", window.scrollY < 300);
+    });
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+</script>
+</body>
+</html>

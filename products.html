@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blossom Beauty 🌸 | Products</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-pink-50 text-gray-800">
+
+  <!-- Navbar -->
+  <nav class="flex items-center justify-between px-6 py-4 bg-white shadow sticky top-0 z-50">
+    <h1 class="text-2xl font-bold text-pink-600">Blossom Beauty 🌸</h1>
+    <ul class="flex space-x-4">
+      <li><a href="index.html" class="hover:text-pink-600 font-medium">Home</a></li>
+      <li><a href="products.html" class="text-pink-600 font-bold">Products</a></li>
+      <li><a href="about.html" class="hover:text-pink-600 font-medium">About</a></li>
+      <li><a href="contact.html" class="hover:text-pink-600 font-medium">Contact</a></li>
+      <li><a href="cart.html" class="relative">
+        🛒 <span id="cart-badge" class="absolute -top-2 -right-3 bg-pink-600 text-white text-xs w-5 h-5 flex items-center justify-center rounded-full">0</span>
+      </a></li>
+    </ul>
+  </nav>
+
+  <!-- Top Section Text -->
+  <section class="px-6 py-8 text-center fade-in">
+    <h2 class="text-3xl font-bold text-pink-600 mb-2">Explore Our Beautiful Blossoms 💐</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto">Every bouquet is a story of love, joy, and celebration. Scroll down and find the one that speaks to your heart.</p>
+  </section>
+
+  <!-- Search Bar -->
+  <div class="p-6 fade-in">
+    <input type="text" id="searchInput" placeholder="Search your favorite bouquet..." class="w-full p-3 border border-pink-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-400" />
+  </div>
+
+  <!-- Products Section -->
+  <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-2 pb-12"></div>
+
+  <!-- Bottom Text -->
+  <section class="px-4 py-8 text-center fade-in">
+    <h3 class="text-2xl font-semibold text-pink-500 mb-2">Can't decide? Let your heart choose! 🌺</h3>
+    <p class="text-gray-600 max-w-xl mx-auto">Our fresh flowers are handpicked and beautifully arranged to make every moment extra special. Order now and spread the fragrance of happiness!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-white text-center p-4 shadow-inner">
+    <p class="text-sm text-pink-500">&copy; 2025 Blossom Beauty 🌸. All rights reserved.</p>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="fixed bottom-6 right-6 bg-pink-500 text-white p-3 rounded-full shadow-lg hover:bg-pink-600 transition-opacity opacity-0 pointer-events-none z-50">
+    ⬆️
+  </button>
+
+  <script>
+    const products = [
+      { id: 1, name: "Red Rose Bouquet", price: 1500, image: "https://images.unsplash.com/photo-1652282558813-2322148cbc16?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHJlZCUyMHJvc2UlMjAlMjBib3VxZGV0JTIwaW4lMjB2YXNlfGVufDB8fDB8fHww" },
+      { id: 2, name: "Sunflower Charm", price: 1800, image: "https://plus.unsplash.com/premium_photo-1667870034632-134c46ef9a47?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDF8fHN1bmZsb3dlcnMlMjAlMjBmbG93ZXIlMjBib3VxZGV0JTIwb24lMjB0YWJsZXxlbnwwfHwwfHx8MA%3D%3D" },
+      { id: 3, name: "Beautiful Lillies", price: 2000, image: "https://plus.unsplash.com/premium_photo-1677620614797-29d03f3417ce?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGxpbGllcyUyMGZsb3dlciUyMGJvdXFkZXQlMjBvbiUyMHRhYmxlfGVufDB8fDB8fHww" },
+      { id: 4, name: "Tulip Surprise", price: 1700, image: "https://images.unsplash.com/photo-1616058523837-bbc6f7c74807?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHR1bGlwJTIwYm91cWRldCUyMGluJTIwdmFzZXxlbnwwfHwwfHx8MA%3D%3D" },
+      { id: 5, name: "Mixed Blossoms", price: 2200, image: "https://images.unsplash.com/photo-1704856513088-3919b6a18547?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fG1peGVkJTIwZmxvd2VycyUyMGJvdXFkZXQlMjB0byUyMHNlbGx8ZW58MHx8MHx8fDA%3D" },
+      { id: 6, name: "Pink Roses", price: 1600, image: "https://images.unsplash.com/photo-1686424735290-ea6ac590983c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTV8fHBpbmslMjByb3NlcyUyMCUyMGZsb3dlciUyMGJvdXFkZXQlMjBvbiUyMHRhYmxlfGVufDB8fDB8fHww" },
+      { id: 7, name: "Orchid Elegance", price: 2500, image: "https://plus.unsplash.com/premium_photo-1676143511278-352ff47e17d3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8b3JjaGlkJTIwJTIwZmxvd2VyJTIwYm91cWRldCUyMG9uJTIwdGFibGV8ZW58MHx8MHx8fDA%3D" },
+      { id: 8, name: "Spring Garden", price: 1900, image: "https://images.unsplash.com/photo-1734959630431-43cf3ae34f8e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzJ8fGJlYXV0aWZ1bCUyMGZsb3dlciUyMGJvdXFkZXQlMjBvbiUyMHRhYmxlfGVufDB8fDB8fHww" }
+    ];
+
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    function updateCartBadge() {
+      document.getElementById("cart-badge").textContent = cart.length;
+    }
+
+    function addToCart(productId) {
+      const product = products.find(p => p.id === productId);
+      cart.push(product);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      updateCartBadge();
+      showToast(`${product.name} added to cart!`);
+    }
+
+    function renderProducts(productList) {
+      const productGrid = document.getElementById("productGrid");
+      productGrid.innerHTML = "";
+
+      productList.forEach((product, index) => {
+        const productCard = document.createElement("div");
+        productCard.className = "bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-300 fade-in";
+
+        productCard.innerHTML = `
+          <img src="${product.image}" alt="${product.name}" class="w-full h-80 object-cover">
+          <div class="p-3">
+            <h2 class="text-lg font-semibold text-gray-800">${product.name}</h2>
+            <p class="text-pink-600 font-bold mt-1">PKR ${product.price}</p>
+            <button onclick="addToCart(${product.id})" class="mt-3 w-full bg-pink-500 hover:bg-pink-600 text-white py-1 rounded-lg transition">Add to Cart</button>
+          </div>
+        `;
+
+        productGrid.appendChild(productCard);
+        setTimeout(() => productCard.classList.add("visible"), index * 100);
+      });
+    }
+
+    function showToast(message) {
+      const toast = document.createElement("div");
+      toast.className = "fixed bottom-6 right-6 bg-pink-600 text-white px-4 py-2 rounded shadow-lg z-50 animate-bounce";
+      toast.textContent = message;
+      document.body.appendChild(toast);
+      setTimeout(() => toast.remove(), 3000);
+    }
+
+    document.getElementById("searchInput").addEventListener("input", function () {
+      const searchText = this.value.toLowerCase();
+      const filtered = products.filter(product => product.name.toLowerCase().includes(searchText));
+      renderProducts(filtered);
+    });
+
+    // Fade-in on scroll
+    function revealOnScroll() {
+      document.querySelectorAll('.fade-in').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+
+    // Back to Top Button
+    const backToTopBtn = document.getElementById("backToTopBtn");
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 300) {
+        backToTopBtn.classList.remove("opacity-0", "pointer-events-none");
+        backToTopBtn.classList.add("opacity-100");
+      } else {
+        backToTopBtn.classList.add("opacity-0", "pointer-events-none");
+        backToTopBtn.classList.remove("opacity-100");
+      }
+    });
+
+    backToTopBtn.addEventListener("click", () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Init
+    renderProducts(products);
+    updateCartBadge();
+  </script>
+</body>
+</html>
